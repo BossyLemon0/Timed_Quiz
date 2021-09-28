@@ -1,0 +1,16 @@
+section{
+    padding: 135px;
+    display: grid;
+    justify-content: center;
+    border: orange solid;
+    
+}
+header, div{
+    border: orange solid;
+    text-align: center;
+    color: aqua ;
+    font-size: 40px;
+}
+#start, #Score{
+display: none;
+}
