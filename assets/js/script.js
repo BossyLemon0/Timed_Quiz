@@ -5,6 +5,7 @@ var buttonGame = document.querySelector(".buttonGame");
 var buttonScore = document.querySelector(".buttonScore");
 var buttonreset = document.querySelector(".buttonReset");
 var retry = document.querySelector(".retry")
+var buttonHome = document.querySelector(".buttonHome");
 var questions = ["javascript","html","css","querySelector","react","terminal","function","local strorage"]
 var startingwords = null;
 var startingtimetrigger = true;
@@ -27,16 +28,21 @@ console.log(questions.length);
 buttonGame.addEventListener("click", start);
 
 
+
 function start(){
     document.querySelector(".start").style.display = "none";
     document.querySelector(".game").style.display = "block";
 }
+
 function retry1(){
 document.querySelector(".Score").style.display = "none";
 document.querySelector(".game").style.display = "block";
 }
 
-
+function home(){
+    document.querySelector(".Score").style.display = "none";
+    document.querySelector(".start").style.display ="block";
+}
 
 butt1.addEventListener("click", reset);
 
@@ -90,7 +96,7 @@ function toscores(){
 }
 
 // buttonGame.addEventListener("click", start);
-// buttonGame.addEventListener("click", start);
+buttonHome.addEventListener("click",home);
 retry.addEventListener("click", retry1);
 
 
