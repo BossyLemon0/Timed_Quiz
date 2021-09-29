@@ -6,20 +6,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/reset.css">
     <link rel="stylesheet" href="assets/css/style.css">
-    <title>Word Guesser</title>
+    <title>Timed Quiz</title>
 </head>
 <body>
     <section id="start" class="start">
+        <div>
+            <header>
+                <h1>Tech quizes</h1>
+            </header>
+            <div id ="buttonGame" class="buttonGame button">start</div>
+            <div id ="buttonS" class ="buttonScore button">High scores</div>
+        </div>
     </section>
     <section id="game" class ="game">
         <header>
-            <h1>Word Guesser</h1>
+            <h2>Quiz</h2>
         </header>
         <div id="wordsHolder" class="wordsHolder">_ _ _ _ _ _</div>
         <div id="timer" class="timer"><p><span>_</span> Time left</p></div>
         <button>hi</button>
     </section>
     <section id="Score" class="Score">
+        <div>
+            <h3>Your score</h3>
+            <div id="home" class="buttonReset button">Home</div>
+            <div id="lastscores" class="buttonScore button">Scores</div>
+            <div id="retry" class="retry button">Retry</div>
+        </div>
     </section>
     <script src="assets/js/script.js"></script>
 </body>

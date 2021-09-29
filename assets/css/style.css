@@ -11,6 +11,9 @@ header, div{
     color: aqua ;
     font-size: 40px;
 }
-#start, #Score{
-display: none;
+#game, #Score{
+    display: none;
+}
+.button:hover {
+cursor:pointer;
 }

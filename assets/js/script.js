@@ -1,42 +1,70 @@
 var wordsHolder = document.querySelector(".wordsHolder");
 var secondsleft = document.querySelector(".timer span");
-var butt = document.querySelector("button");
-var words = ["javascript","html","css","querySelector","react","terminal","function","local strorage","DOM","conditionals","Arrays",
-"objects","scope","console.log","media query","flex","pseudo code","typography","pseudo classes","pseudo elements","wireframing",
-"selector","variables","git","attributes","box-model","eventlistener","symantic tags","loops","this"]
+var butt1 = document.querySelector("button"); //functionality wired someowhere else
+var buttonGame = document.querySelector(".buttonGame");
+var buttonScore = document.querySelector(".buttonScore");
+var buttonreset = document.querySelector(".buttonReset");
+var retry = document.querySelector(".retry")
+var questions = ["javascript","html","css","querySelector","react","terminal","function","local strorage"]
 var startingwords = null;
 var startingtimetrigger = true;
 var resetvalue = true;
 var secondsleft = 10;
-var ammofwords = 30;
-
-console.log(words.length);
+var ammofquestions = 10;
 
 
-butt.addEventListener("click", reset);
+
+
+document.querySelector(".start").style.display = "block";
+
+
+
+
+
+
+console.log(questions.length);
+
+buttonGame.addEventListener("click", start);
+
+
+function start(){
+    document.querySelector(".start").style.display = "none";
+    document.querySelector(".game").style.display = "block";
+}
+function retry1(){
+document.querySelector(".Score").style.display = "none";
+document.querySelector(".game").style.display = "block";
+}
+
+
+
+butt1.addEventListener("click", reset);
 
 function reset() {
     resetvalue = false;
-    newWords();
+    newQuestions();
     
     // console.log(resetvalue);
 }
 
 
-function newWords() {
+function newQuestions() {
 
-    var i = 0
-    while(resetvalue == false && i<30){
+    var i = 0;
+    while(resetvalue == false && i<10){
         i++
-            var newWords = words[Math.floor(Math.random()*ammofwords)];
-            if(ammofwords == 0){
+            var newQuestions = questions[Math.floor(Math.random()*ammofquestions)];
+            if(ammofquestions == 0){
                 console.log("no more")
+                wordsHolder.textContent = '';
+                toscores();
+
             }
             else{
-            ammofwords--;
-            console.log(ammofwords);
+            ammofquestions--;
+            console.log(ammofquestions);
             resetvalue = true;
-            var charArray = newWords.split('');
+            var charArray = newQuestions.split('');
             console.log(charArray);
 
             //trying divs for the length of each word
@@ -45,13 +73,29 @@ function newWords() {
             //     divs.textContent = charArray[i];
             // }
             // wordsHolder.append(divs);
-            wordsHolder.textContent = newWords;
+            wordsHolder.textContent = newQuestions;
             }
     }
 
     
-    console.log(newWords);
+    console.log(newQuestions);
 }
+
+function toscores(){
+    document.querySelector(".game").style.display = "none";
+    document.querySelector(".Score").style.display = "block";
+    if(ammofquestions == 0){
+    ammofquestions += 10;
+    }
+}
+
+// buttonGame.addEventListener("click", start);
+// buttonGame.addEventListener("click", start);
+retry.addEventListener("click", retry1);
+
+
+
+
     // pull a random word at start
     //that words length is turned into a line of hidden dashes
     //when the person clicks on the empty void they can type a letter
