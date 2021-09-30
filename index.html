@@ -14,7 +14,7 @@
             <header>
                 <h1>Tech quizes</h1>
             </header>
-            <div id ="buttonGame" class="buttonGame button">start</div>
+            <div id ="buttonGame" class="buttonGame button">Start</div>
             <div id ="buttonS" class ="buttonScore button">High scores</div>
         </div>
     </section>
@@ -22,19 +22,45 @@
         <header>
             <h2>Quiz</h2>
         </header>
-        <div>
+
+        <div id="questionAnswersContainer">
+            <div >
+              <h1 class="questionContainer"</h1>
+            </div>
+            <div class="answers">
+              <button id="aone"  class="answerOne" onclick="buttonOne()"></button>
+              <button id="atwo"  class="answerTwo" onclick="buttonTwo()"></button>
+              <button id="athree"  class="answerThree" onclick="buttonThree()"></button>
+              <button id="afour" class="answerFour" onclick="buttonFour()"></button>
+              <h2 class=" time left"></h2>
+            </div>
+          </div>
+
+        <!-- <div>
             <h1 class ></h1>
         </div>
-        <div id="wordsHolder" class="wordsHolder">_ _ _ _ _ _</div>
-        <div id="timer" class="timer"><p><span>_</span> Time left</p></div>
-        <button>hi</button>
+        <div id="wordsHolder" class="wordsHolder">_ _ _ _ _ _</div> -->
+        <div><p><span id="timer" class="timer">_</span> </p></div>
+        
     </section>
     <section id="Score" class="Score">
         <div>
-            <h3>Your score</h3>
+            <div>
+                <h3 id="ys">Your score</h3>
+                <h4><span id="Num"></span>/5</h4>
+            <form id="scoreForm"method="POST">
+                <input type="text" id="initials" placeholder="Initials">
+                <button type="submit" value="submit">Save</button>
+            </form>
+            <div>
             <div id="home" class="buttonHome button">Home</div>
             <div id="lastscores" class="buttonScore button">Scores</div>
             <div id="retry" class="retry button">Retry</div>
+        </div>
+    </section>
+    <section id="scoreViewer" class="scoreViewer">
+        <div>
+            <ul id="scoreList"></ul>
         </div>
     </section>
     <script src="assets/js/script.js"></script>

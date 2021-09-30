@@ -17,3 +17,11 @@ header, div{
 .button:hover {
 cursor:pointer;
 }
+
+#ys{
+    margin-bottom: -4px;
+}
+#Num, h4{
+    margin-bottom: -15px;
+    margin-top:-1px;
+}
