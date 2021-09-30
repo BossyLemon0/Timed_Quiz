@@ -11,46 +11,46 @@ var back = document.querySelector(".back")
 //changes my orignal array to an array of objects
 var arrayOfQuestions = [
     {
-      question: "where does this tag come from? <body>",
+      question: "where does this tag come from? <script>",
       answer1: "Javascript",
       answer2: "HTML",
       answer3: "CSS",
       answer4: "Python",
-      answer: "HTML"
-    },
-    {
-      question: "What language uses flex box?",
-      answer1: "CSS",
-      answer2: "HTML",
-      answer3: "Javascript",
-      answer4: "Python",
-      answer: "CSS"
-  
-    },
-    {
-      question: "What does API stand for?",
-      answer1: "Ape Pie Inhaling",
-      answer2: "Application Programming Interfaces",
-      answer3: "Absolute Pain Inflicting",
-      answer4: "All People Invest", 
-      answer: "Application Programming Interfaces"
-  
-    },
-    {
-      question: "Which language uses arrays?",
-      answer1: "CSS",
-      answer2: "Javascript",
-      answer3: "HTML",
-      answer4: "English",   
       answer: "Javascript"
     },
     {
-      question: "where do i call my mom?",
-      answer1: "Your Phone",
-      answer2: "His Phone",
-      answer3: "Her Phone",
-      answer4: "My Phone",
-      answer: "Your Phone"
+      question: " Which of the following function of String object combines the text of two strings and returns a new string?",
+      answer1: "concat()",
+      answer2: "Add()",
+      answer3: "merge()",
+      answer4: "append()",
+      answer: "concat()"
+  
+    },
+    {
+      question: "Which of the following function of Array object removes the last element from an array and returns that element?",
+      answer1: "join()",
+      answer2: "map()",
+      answer3: "push()",
+      answer4: "pop()", 
+      answer: "pop()"
+  
+    },
+    {
+      question: "Which of the following function of String object splits a String object into an array of strings by separating the string into substrings?",
+      answer1: "spice()",
+      answer2: "replace()",
+      answer3: "split()",
+      answer4: "slice()",   
+      answer: "split()"
+    },
+    {
+      question: "Which of the following type of variable is visible only within a function where it is defined?",
+      answer1: "local variable",
+      answer2: "global variable",
+      answer3: "Both answers",
+      answer4: "None are correct",
+      answer: "local variable"
     }
   ]
 
