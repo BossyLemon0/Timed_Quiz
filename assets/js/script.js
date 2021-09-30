@@ -2,10 +2,12 @@ var wordsHolder = document.querySelector(".wordsHolder");
 var secondsleft = document.querySelector(".timer span");
 var butt1 = document.querySelector("button"); //functionality wired someowhere else
 var buttonGame = document.querySelector(".buttonGame");
-var buttonScore = document.querySelector(".buttonScore");
+var buttonScore = document.querySelector("#buttonS");
+var buttonScore2 = document.querySelector("#lastscores")
 var buttonreset = document.querySelector(".buttonReset");
 var retry = document.querySelector(".retry")
 var buttonHome = document.querySelector(".buttonHome");
+var back = document.querySelector(".back")
 //changes my orignal array to an array of objects
 var arrayOfQuestions = [
     {
@@ -68,7 +70,10 @@ var scoreSpan = document.querySelector("#Num");
 
 var scoreArr=[];
 
+
+//I think I need a prevent default here
 function renderScores(){
+   
 scoreList.textContent="";
 
 for (var i=0; i < scoreArr.length; i++){
@@ -146,7 +151,7 @@ function start(){
     document.querySelector(".start").style.display = "none";
     document.querySelector(".game").style.display = "block";
     // resetvalue = false;
-    secondsLeft+=10;
+    secondsLeft+=40;
     setTime();
     score = 0;
 }
@@ -154,7 +159,7 @@ function start(){
 function retry1(){
     document.querySelector(".Score").style.display = "none";
     document.querySelector(".game").style.display = "block";
-    secondsLeft+=10;
+    secondsLeft+=40;
     shuffle(arrayOfQuestions);
     setTime();
     score = 0;
@@ -165,6 +170,7 @@ function retry1(){
 function home(){
     document.querySelector(".Score").style.display = "none";
     document.querySelector(".start").style.display ="grid";
+    document.querySelector(".scoreViewer").style.display = "none";
 }
 
 
@@ -211,11 +217,11 @@ function shuffle(array) {
   //THE ORDER IS DETERMINED EARLIER, SO WERE STARTING WITH INDEX 0
   var index = 0
   
-  questionEle.textContent = shuffledArray[0].question
-  answer1Ele.textContent = shuffledArray[0].answer1
-  answer2Ele.textContent = shuffledArray[0].answer2
-  answer3Ele.textContent = shuffledArray[0].answer3
-  answer4Ele.textContent = shuffledArray[0].answer4
+  questionEle.textContent = shuffledArray[index].question
+  answer1Ele.textContent = shuffledArray[index].answer1
+  answer2Ele.textContent = shuffledArray[index].answer2
+  answer3Ele.textContent = shuffledArray[index].answer3
+  answer4Ele.textContent = shuffledArray[index].answer4
   
   
   var score = 0
@@ -228,6 +234,7 @@ function shuffle(array) {
       console.log("correct")
       score += 1
     } else {
+        secondsLeft-=10;
       console.log("wrong")
     }
     addIndexNumber()
@@ -239,6 +246,7 @@ function shuffle(array) {
       console.log("correct")
       score += 1
     } else {
+        secondsLeft-=10;
       console.log("wrong")
     }
     addIndexNumber()
@@ -249,6 +257,7 @@ function shuffle(array) {
       console.log("correct")
       score += 1
     } else {
+        secondsLeft-=10;
       console.log("wrong")
     }
     addIndexNumber()
@@ -259,6 +268,7 @@ function shuffle(array) {
       console.log("correct")
       score += 1
     } else {
+        secondsLeft-=10;
       console.log("wrong")
     }
     addIndexNumber()
@@ -271,7 +281,7 @@ function shuffle(array) {
 
   function addIndexNumber() {
     index += 1
-    if (index <= shuffledArray.length - 1){
+    if (index <= shuffledArray.length - 1 ){
       questionEle.textContent = shuffledArray[index].question
       answer1Ele.textContent = shuffledArray[index].answer1
       answer2Ele.textContent = shuffledArray[index].answer2
@@ -332,14 +342,22 @@ function toscores(){
 
 }
 
+function nameScore(){
+    document.querySelector(".start").style.display = "none";
+    document.querySelector(".Score").style.display = "none";
+    document.querySelector(".scoreViewer").style.display = "grid";
+}
+
+
+
 //allows the game to flip between menus
 
 // buttonGame.addEventListener("click", start);
 buttonHome.addEventListener("click",home);
 retry.addEventListener("click", retry1);
-
-
-
+buttonScore.addEventListener("click", nameScore);
+buttonScore2.addEventListener("click",nameScore);
+back.addEventListener("click", home);
 
 
 //adds the timer function
@@ -354,7 +372,7 @@ function setTime() {
   var timerInterval = setInterval(function() {
 
 
-    if(secondsLeft === 0) {
+    if(secondsLeft <= 0) {
       // Stops execution of action at set interval
       clearInterval(timerInterval);
       // Calls function to create and append image
@@ -401,4 +419,17 @@ function sendMessage() {
 //     resetvalue = true;
 
 //     }   
+// }
+
+
+// I tried to create a filler for if people entered the score section without having a score entered yet
+// var nope = document.querySelector(".nope");
+// if (nope == 0){
+//     var nop = document.createElement("p");
+//     nop.textContent ="No scores yet";
+
+//     nope.appendChild(nop);
+// }
+// else{
+//     nope.textContent="";
 // }

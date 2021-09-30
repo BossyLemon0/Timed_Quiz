@@ -11,7 +11,7 @@ header, div{
     color: aqua ;
     font-size: 40px;
 }
-#game, #Score{
+#game, #Score, #scoreViewer{
     display: none;
 }
 .button:hover {
